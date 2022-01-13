@@ -5,7 +5,7 @@
             "apps": [],
             "details": [
                 {
-                    "appID": "9JA89QQLNQ.com.apple.wwdc",
+                    "appID": "JQ525L2MZD.com.adobe.ccsdk.ESDK.RefApp",
                     "paths": [ "/esdk/*"]
                 }
             ]
