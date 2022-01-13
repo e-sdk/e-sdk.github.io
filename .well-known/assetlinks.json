@@ -1,9 +1,9 @@
 [{
   "relation": ["delegate_permission/common.handle_all_urls"],
   "target": {
-    "namespace": "esdk",
-    "package_name": "com.esdk",
+    "namespace": "android_app",
+    "package_name": "com.adobe.creativesdk.engagement.AndroidTestApp",
     "sha256_cert_fingerprints":
-    [""]
+    ["CB:CC:3D:2A:B8:FC:2D:08:5D:85:6F:1D:E1:94:E1:A8:B1:37:E8:E9:54:0C:02:40:24:C1:81:8E:90:AB:3D:9B"]
   }
 }]
