@@ -1,0 +1,14 @@
+
+
+    {
+        "applinks": {
+            "apps": [],
+            "details": [
+                {
+                    "appID": "9JA89QQLNQ.com.apple.wwdc",
+                    "paths": [ "/esdk/*"]
+                }
+            ]
+        }
+    }
+
