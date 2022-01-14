@@ -5,15 +5,13 @@
     <script>
       var md = new MobileDetect(window.navigator.userAgent);
       if (md.os() === 'iOS' || md.os() === 'iPadOS') {
-        window.location = "./ios";
+        window.location = "./ios" + window.location.search;
       } else if(md.os() == 'AndroidOS'){
-        window.location = "./Android";
+        window.location = "./android" + window.location.search;
       } else {
         document.write("<h1>This app is suported only on Android/iOS. Please open this page on a supported device.</h1>");
       }
     </script>
     </head>
   <body>
-    
-  </body>
 </html>
