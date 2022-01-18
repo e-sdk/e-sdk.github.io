@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
   <head>
     <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.classless.min.css">
@@ -5,15 +6,35 @@
   <body>
     <main>
       <h1> Handling Deep URLs </h1>
-
+      <b>Select the action</b>
+      <select id="select">
+        <option value="externalBrowser" selected>Open in external browser</option>
+        <option value="inAppBrowser">Open In App browser</option>
+      </select>
+      <input id="data" placeholder="Action Data" type="text" value="https://www.adobe.com"/>
+      <b>Click on a link to perform</b>
       <ul>
-        <li><a href="esdk://esdk?action_name=inAppBrowser&action_data=https://www.adobe.com&esdk=true">Deep Link to App ios</a></li>
-        <li><a href="esdk://esdk?action_name=inAppBrowser&action_data=https://www.adobe.com&esdk=true">Deep Link to App Android</a></li>
-        <li><a href="absent://esdk?action_name=inAppBrowser&action_data=https://www.adobe.com&esdk=true">Deep Link to App Not installed</a></li>
-        <li><a href="./esdk/ios/?action_name=inAppBrowser&action_data=https://www.adobe.com&esdk=true">Deep Link to App via Separate Page</a></li>
-        <li><a>Deep Link via App fallback to store</a></li>
+        <li><a id="universal" href="#">Universal Link</a></li>
+        <li><a id="external" href="#">Direct Link</a></li>
+        <li><a id="fallback" href="#">Link with fallback page</a></li>
       </ul>
-
     </main>
   </body>
+  <script>
+    const select = document.getElementById('select');
+    const data = document.getElementById('data');
+    const universal = document.getElementById('universal');
+    const external = document.getElementById('external');
+    const fallback = document.getElementById('fallback');
+    const action = () => {
+      const actionName = select.value;
+      const actionData = data.value;
+      universal.href = `./esdk/index.html?action_name=${actionName}&action_data=${actionData}&esdk=true`;
+      external.href = `esdk://com.adobe.creativesdk.engagement.AndroidTestApp/esdk?action_name=${actionName}&action_data=${actionData}&esdk=true`;
+      fallback.href = `./uri/index.html?action_name=${actionName}&action_data=${actionData}&esdk=true`;
+    };
+    select.addEventListener('change',action);
+    data.addEventListener('change',action);
+    action();
+  </script>
 </html>
