@@ -197,7 +197,6 @@
               if (check.checked) {
                       Clipboard.copy("esdk://esdk" + window.location.search + "&app=com.adobe.ccsdk.ESDK.RefApp&timestamp=" + new Date().toISOString().replace(/\.[0-9]{3}/, ''));
                     }
-              e.preventDefault();
             };
       store.addEventListener('click', storeHandler);
       if (!window.location.href.includes("norefresh")) {
