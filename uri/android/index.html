@@ -136,8 +136,8 @@
       let check = document.getElementById('checkbox');
       let storeHandler = (e) => {
               if (check.checked) {
-                      navigator.clipboard.writeText(window.location.href + "&app=com.adobe.creativesdk.engagement.AndroidTestApp&timestamp=" + new Date().toISOString().replace(/\.[0-9]{3}/, '')).finally(() => {
-window.location = store.href;
+                      navigator.clipboard.writeText(window.location.href + "&app=com.adobe.creativesdk.engagement.AndroidTestApp&timestamp=" + new Date().toISOString().replace(/\.[0-9]{3}/, '')).catch(console.log).finally(() => {
+// window.location = store.href;
                             });
 
                       e.preventDefault();
