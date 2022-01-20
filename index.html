@@ -53,7 +53,7 @@
       return `./esdk/index.html?action_name=${actionName}&action_data=${actionData}&esdk=true`;
     });
     setup("external", (actionName, actionData) => {
-      return  `esdk://com.adobe.creativesdk.engagement.AndroidTestApp/esdk?action_name=${actionName}&action_data=${actionData}&esdk=true`;
+      return `esdk://com.adobe.creativesdk.engagement.AndroidTestApp/esdk?action_name=${actionName}&action_data=${actionData}&esdk=true`;
     });
     setup("fallback", (actionName, actionData) => {
       return `./uri/index.html?action_name=${actionName}&action_data=${actionData}&esdk=true`;
@@ -62,7 +62,7 @@
       return `./uri/index.html?action_name=${actionName}&action_data=${actionData}&esdk=true&norefresh=true`;
     });
     const action = () => {
-      actions.forEach(action => action());
+      actions.forEach((action) => action());
     };
     select.addEventListener("change", action);
     data.addEventListener("change", action);
