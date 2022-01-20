@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="/mvp.css">
+    <link rel="stylesheet" href="../../mvp.css">
   </head>
   <body>
     <main>
@@ -9,13 +9,14 @@
       <p>
       This page was meant to be opened in the ESDK Application. You can download the ESDK app from the App Store and tap on the link below to open the page.
       </p>
-      <a id="link" href="#">
+      <label><input type="checkbox" id="checkbox" checked/>Convert App store link to deferred deep link</label>
+      <a href="link" href="#">
         <button style="max-width:300px; margin: 40px auto 100px">
           Tap to open the ESDK App
         </button>
       </a>
       <p style="max-width:300px">
-      <a href="#" style="color:black">
+      <a id="store" href="https://play.google.com/store/apps/details?id=com.adobe.psmobile&hl=en&gl=us" style="color:black">
         <svg version="1.1" id="Livello_1" xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;"
           xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 5435.8 1604"
           style="enable-background:new 0 0 5435.8 1604;" xml:space="preserve">
@@ -130,6 +131,60 @@
                     }, 1000);
             }
 
+      window.Clipboard = (function(window, document, navigator) {
+              var textArea,
+                copy;
+
+              function isOS() {
+                      return navigator.userAgent.match(/ipad|iphone/i);
+                    }
+
+              function createTextArea(text) {
+                      textArea = document.createElement('textArea');
+                      textArea.value = text;
+                      document.body.appendChild(textArea);
+                    }
+
+              function selectText() {
+                      var range,
+                        selection;
+
+                      if (isOS()) {
+                              range = document.createRange();
+                              range.selectNodeContents(textArea);
+                              selection = window.getSelection();
+                              selection.removeAllRanges();
+                              selection.addRange(range);
+                              textArea.setSelectionRange(0, 999999);
+                            } else {
+                                    textArea.select();
+                                  }
+                    }
+
+              function copyToClipboard() {
+                      document.execCommand('copy');
+                      document.body.removeChild(textArea);
+                    }
+
+              copy = function(text) {
+                      createTextArea(text);
+                      selectText();
+                      copyToClipboard();
+                    };
+
+              return {
+                      copy: copy
+                    };
+            })(window, document, navigator);
+      document.getElementById('link').href = "esdk://esdk" + window.location.search;
+      let store = document.getElementById('store');
+      let check = document.getElementById('checkbox');
+      let storeHandler = (e) => {
+              if (check.checked) {
+                      Clipboard.copy(window.location.href + "&app=com.adobe.creativesdk.engagement.AndroidTestApp&timestamp=" + new Date().toISOString().replace(/\.[0-9]{3}/, ''));
+                    }
+            };
+      store.addEventListener('click', storeHandler);
     </script>
   </body>
 </html>

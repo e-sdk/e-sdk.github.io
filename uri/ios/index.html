@@ -195,7 +195,7 @@
       let check = document.getElementById('checkbox');
       let storeHandler = (e) => {
               if (check.checked) {
-                      Clipboard.copy("esdk://esdk" + window.location.search + "&app=com.adobe.ccsdk.ESDK.RefApp&timestamp=" + new Date().toISOString().replace(/\.[0-9]{3}/, ''));
+                      Clipboard.copy(window.location.href + "&app=com.adobe.ccsdk.ESDK.RefApp&timestamp=" + new Date().toISOString().replace(/\.[0-9]{3}/, ''));
                     }
             };
       store.addEventListener('click', storeHandler);
