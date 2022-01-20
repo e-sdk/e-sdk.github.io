@@ -1,66 +1,71 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="./mvp.css">
+    <link rel="stylesheet" href="./mvp.css" />
     <script src="./qrcode.min.js"></script>
   </head>
   <body>
     <main>
-      <h1> Handling Deep URLs </h1>
+      <h1>Handling Deep URLs</h1>
       <b>Select the action</b>
       <select id="select">
-        <option value="externalBrowser" selected>Open in external browser</option>
+        <option value="externalBrowser" selected>
+          Open in external browser
+        </option>
         <option value="inAppBrowser">Open In App browser</option>
       </select>
-      <input id="data" placeholder="Action Data" type="text" value="https://www.adobe.com"/>
+      <input
+        id="data"
+        placeholder="Action Data"
+        type="text"
+        value="https://www.adobe.com"
+      />
       <b>Click on a link to perform</b>
       <ul>
-        <li><a id="universal" href="#">Universal Link</a><br></li>
-        <li><a id="external" href="#">Direct Link</a><br></li>
-        <li><a id="fallback" href="#">Link with fallback page</a><br></li>
-        <li><a id="nolink" href="#">Testing Fallback page (no auto-redirection)</a><br></li>
+        <li><a id="universal" href="#">Universal Link</a><br /></li>
+        <li><a id="external" href="#">Direct Link</a><br /></li>
+        <li><a id="fallback" href="#">Link with fallback page</a><br /></li>
+        <li>
+          <a id="nolink" href="#">Testing Fallback page (no auto-redirection)</a
+          ><br />
+        </li>
       </ul>
     </main>
   </body>
   <script>
-    let svg1, svg2, svg3, svg4;
-    const select = document.getElementById('select');
-    const data = document.getElementById('data');
-    const universal = document.getElementById('universal');
-    const external = document.getElementById('external');
-    const fallback = document.getElementById('fallback');
-    const nolink = document.getElementById('nolink');
+    const actions = [];
+    const select = document.getElementById("select");
+    const data = document.getElementById("data");
+    const setup = (type, provider) => {
+      let svg;
+      const element = document.getElementById(type);
+      actions.push(() => {
+        const url = provider(select.value, data.value);
+        element.href = url;
+        if (svg) {
+          svg.parentNode.removeChild(svg);
+        }
+        svg = QRCode(element.href);
+        element.parentNode.appendChild(svg2);
+      });
+    };
+    setup("universal", (actionName, actionData) => {
+      return `./esdk/index.html?action_name=${actionName}&action_data=${actionData}&esdk=true`;
+    });
+    setup("external", (actionName, actionData) => {
+      return  `esdk://com.adobe.creativesdk.engagement.AndroidTestApp/esdk?action_name=${actionName}&action_data=${actionData}&esdk=true`;
+    });
+    setup("fallback", (actionName, actionData) => {
+      return `./uri/index.html?action_name=${actionName}&action_data=${actionData}&esdk=true`;
+    });
+    setup("nolink", (actionName, actionData) => {
+      return `./uri/index.html?action_name=${actionName}&action_data=${actionData}&esdk=true&norefresh=true`;
+    });
     const action = () => {
-          const actionName = select.value;
-          const actionData = data.value;
-          universal.href = `./esdk/index.html?action_name=${actionName}&action_data=${actionData}&esdk=true`;
-          if (svg1) {
-                svg1.parentNode.removeChild(svg1);
-              }
-          console.log(universal.href);
-          svg1 = QRCode(universal.href);
-          universal.parentNode.appendChild(svg1);
-          external.href = `esdk://com.adobe.creativesdk.engagement.AndroidTestApp/esdk?action_name=${actionName}&action_data=${actionData}&esdk=true`;
-          if (svg2) {
-                svg2.parentNode.removeChild(svg2);
-              }
-          svg2 = QRCode(external.href);
-          external.parentNode.appendChild(svg2);
-          fallback.href = `./uri/index.html?action_name=${actionName}&action_data=${actionData}&esdk=true`;
-          if (svg3) {
-                svg3.parentNode.removeChild(svg3);
-              }
-          svg3 = QRCode(fallback.href);
-          fallback.parentNode.appendChild(svg3);
-          nolink.href = `./uri/index.html?action_name=${actionName}&action_data=${actionData}&esdk=true&norefresh=true`;
-          if (svg4) {
-                svg4.parentNode.removeChild(svg4);
-              }
-          svg4 = QRCode(fallback.href);
-          nolink.parentNode.appendChild(svg4);
-        };
-    select.addEventListener('change',action);
-    data.addEventListener('change',action);
+      actions.forEach(action => action());
+    };
+    select.addEventListener("change", action);
+    data.addEventListener("change", action);
     action();
   </script>
 </html>
