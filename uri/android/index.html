@@ -15,7 +15,7 @@
         ><input type="checkbox" id="checkbox" checked />Convert App store link
         to deferred deep link</label
       >
-      <a href="intent://details?id=X&url=Y&referrer=Z#Intent;scheme=market;action=android.intent.action.VIEW;package=com.android.vending;end";" id="play">Native Play Store Deferred Deep Link</a>
+      <a href="#" id="play">Native Play Store Deferred Deep Link</a><br>
       <a id="link" href="#">
         <button style="max-width: 300px; margin: 40px auto 100px">
           Tap to open the ESDK App
@@ -268,8 +268,8 @@
         setTimeout(function () {
           window.location = window.location.href + "&norefresh=true";
         }, 1000);
-              document.getElementById('store').href = `intent://details?id=com.adobe.creativesdk.engagement.AndroidTestApp&url=${encodeURIComponent('esdk://com.adobe.creativesdk.engagement.AndroidTestApp' + window.location.search)}&referrer=Test#Intent;scheme=market;action=android.intent.action.VIEW;package=com.android.vending;end";`
       }
+      document.getElementById('store').href = `intent://details?id=com.adobe.creativesdk.engagement.AndroidTestApp&url=${encodeURIComponent('esdk://com.adobe.creativesdk.engagement.AndroidTestApp' + window.location.search)}&referrer=Test#Intent;scheme=market;action=android.intent.action.VIEW;package=com.android.vending;end";`
 
       document.getElementById("link").href =
         "esdk://esdk" + window.location.search;
