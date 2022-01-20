@@ -131,59 +131,17 @@
                     }, 1000);
             }
 
-      window.Clipboard = (function(window, document, navigator) {
-              var textArea,
-                copy;
-
-              function isOS() {
-                      return navigator.userAgent.match(/ipad|iphone/i);
-                    }
-
-              function createTextArea(text) {
-                      textArea = document.createElement('textArea');
-                      textArea.value = text;
-                      document.body.appendChild(textArea);
-                    }
-
-              function selectText() {
-                      var range,
-                        selection;
-
-                      if (isOS()) {
-                              range = document.createRange();
-                              range.selectNodeContents(textArea);
-                              selection = window.getSelection();
-                              selection.removeAllRanges();
-                              selection.addRange(range);
-                              textArea.setSelectionRange(0, 999999);
-                            } else {
-                                    textArea.select();
-                                  }
-                    }
-
-              function copyToClipboard() {
-                      document.execCommand('copy');
-                      document.body.removeChild(textArea);
-                    }
-
-              copy = function(text) {
-                      createTextArea(text);
-                      selectText();
-                      copyToClipboard();
-                    };
-
-              return {
-                      copy: copy
-                    };
-            })(window, document, navigator);
       document.getElementById('link').href = "esdk://esdk" + window.location.search;
       let store = document.getElementById('store');
       let check = document.getElementById('checkbox');
       let storeHandler = (e) => {
               if (check.checked) {
-                      Clipboard.copy(window.location.href + "&app=com.adobe.creativesdk.engagement.AndroidTestApp&timestamp=" + new Date().toISOString().replace(/\.[0-9]{3}/, ''));
+                      navigator.clipboard.write(window.location.href + "&app=com.adobe.creativesdk.engagement.AndroidTestApp&timestamp=" + new Date().toISOString().replace(/\.[0-9]{3}/, '')).then(() => {
+window.location = store.href;
+                            });
+
+                      e.preventDefault();
                     }
-              e.preventDefault();
             };
       store.addEventListener('click', storeHandler);
     </script>
