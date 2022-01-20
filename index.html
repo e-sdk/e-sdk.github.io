@@ -18,16 +18,18 @@
         <li><a id="universal" href="#">Universal Link</a><br></li>
         <li><a id="external" href="#">Direct Link</a><br></li>
         <li><a id="fallback" href="#">Link with fallback page</a><br></li>
+        <li><a id="nolink" href="#">Testing Fallback page (no auto-redirection)</a><br></li>
       </ul>
     </main>
   </body>
   <script>
-    let svg1, svg2, svg3;
+    let svg1, svg2, svg3, svg4;
     const select = document.getElementById('select');
     const data = document.getElementById('data');
     const universal = document.getElementById('universal');
     const external = document.getElementById('external');
     const fallback = document.getElementById('fallback');
+    const nolink = document.getElementById('nolink');
     const action = () => {
           const actionName = select.value;
           const actionData = data.value;
@@ -50,6 +52,12 @@
               }
           svg3 = QRCode(fallback.href);
           fallback.parentNode.appendChild(svg3);
+          nolink.href = `./uri/index.html?action_name=${actionName}&action_data=${actionData}&esdk=true&norefresh=true`;
+          if (svg4) {
+                svg4.parentNode.removeChild(svg4);
+              }
+          svg4 = QRCode(fallback.href);
+          nolink.parentNode.appendChild(svg4);
         };
     select.addEventListener('change',action);
     data.addEventListener('change',action);
