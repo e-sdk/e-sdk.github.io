@@ -13,6 +13,17 @@
           Open in external browser
         </option>
         <option value="inAppBrowser">Open In App browser</option>
+        <option value="inAppMessage">In App message</option>
+        <option value="refreshContent">Refresh Content</option>
+
+        <option value="logout">Logout</option>
+        <option value="login">Login</option>
+        <option value="appRating">App Rating</option>
+        <option value="appSettings">App Settings</option>
+        <option value="paywallRestore">Paywall Restore</option>
+        <option value="paywallPurchase">Paywall Purchase</option>
+        <option value="refreshLicense">Refresh License</option>
+        <option value="logSharing">Log Sharing</option>
       </select>
       <input
         id="data"
@@ -20,6 +31,10 @@
         type="text"
         value="https://www.adobe.com"
       />
+      <input id="add"
+      placeholder="Additional URL data"
+      type="text"
+      value="&amp;enable_sso=true"/>
       <b>Click on a link to perform</b>
       <ul>
         <li><a id="universal" href="#">Universal Link</a><br /></li>
@@ -35,12 +50,13 @@
   <script>
     const actions = [];
     const select = document.getElementById("select");
+    const add = document.getElementById("add");
     const data = document.getElementById("data");
     const setup = (type, provider) => {
       let svg;
       const element = document.getElementById(type);
       actions.push(() => {
-        const url = provider(select.value, data.value);
+        const url = provider(select.value, data.value) + add.value;
         element.href = url;
         if (svg) {
           svg.parentNode.removeChild(svg);
