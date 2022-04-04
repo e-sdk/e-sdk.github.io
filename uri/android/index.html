@@ -275,7 +275,7 @@
       }
 
       document.getElementById("link").href =
-        "esdk://esdk" + window.location.search;
+        `esdk://${appid}` + window.location.search;
       
       let store = document.getElementById("store");
       store.href = playurl;
