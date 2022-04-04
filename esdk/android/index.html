@@ -7,8 +7,8 @@
     <main>
       <h1>Fallback Page for links rejected by Universal links Android</h1>
       <p>
-        This page was meant to be opened in the ESDK Application. You can
-        download the ESDK app from the App Store and tap on the link below to
+        This page was meant to be opened in the ESDK based Application. You can
+        download the app from the App Store and tap on the link below to
         open the page.
       </p>
       <label
@@ -17,7 +17,7 @@
       >
       <a id="link" href="#">
         <button style="max-width: 300px; margin: 40px auto 100px">
-          Tap to open the ESDK App
+          Tap to open the App
         </button>
       </a>
       <p style="max-width: 300px">
@@ -257,12 +257,17 @@
       </p>
     </main>
     <script>
+      let appid = new URL(window.location).searchParams.get('appid');
+      appid = appid ||'com.adobe.creativesdk.engagement.AndroidTestApp';
+      let playurl = new URL(window.location).searchParams.get('playurl');
+      playurl = playurl? decodeURIComponent(playurl) : "https://apps.apple.com/us/app/adobe-photoshop/id1457771281";
+
       document.getElementById("link").href =
-        "esdk://com.adobe.creativesdk.engagement.AndroidTestApp" +
+        `esdk://${appid}` +
         window.location.search;
       if (!window.location.href.includes("norefresh")) {
         window.location =
-          "esdk://com.adobe.creativesdk.engagement.AndroidTestApp" +
+          `esdk://${appid}` +
           window.location.search;
         setTimeout(function () {
           window.location = window.location.href + "&norefresh=true";
@@ -271,14 +276,17 @@
 
       document.getElementById("link").href =
         "esdk://esdk" + window.location.search;
+      
       let store = document.getElementById("store");
+      store.href = playurl;
+
       let check = document.getElementById("checkbox");
       let storeHandler = (e) => {
         if (check.checked) {
           navigator.clipboard
             .writeText(
               window.location.href +
-                "&app=com.adobe.creativesdk.engagement.AndroidTestApp&timestamp=" +
+                `&app=${appid}&timestamp=` +
                 new Date().toISOString().replace(/\.[0-9]{3}/, "")
             )
             .catch(console.log)

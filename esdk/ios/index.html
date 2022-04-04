@@ -7,11 +7,11 @@
     <main>
       <h1>Fallback Page for links rejected by Universal links iOS</h1>
       <p>
-      This page was meant to be opened in the ESDK Application. You can download the ESDK app from the App Store and tap on the link below to open the page.
+      This page was meant to be opened in the ESDK based Application. You can download the app from the App Store and tap on the link below to open the page.
       </p>
       <label><input type="checkbox" id="checkbox" checked/>Convert App store link to deferred deep link</label>
 
-      <a id="link" href="#"><button style="max-width:300px; margin: 40px auto 100px">Tap to open the ESDK App</button></a>
+      <a id="link" href="#"><button style="max-width:300px; margin: 40px auto 100px">Tap to open the App</button></a>
 
       <p style="max-width:300px;">
       <a href="https://apps.apple.com/us/app/adobe-photoshop/id1457771281" id="store" style="color:black;width:100%">
@@ -190,17 +190,23 @@
                       copy: copy
                     };
             })(window, document, navigator);
-      document.getElementById('link').href = "esdk://esdk" + window.location.search;
+      const appid = new URL(window.location).searchParams.get('appid');
+      let appleurl = new URL(window.location).searchParams.get('appleurl');
+      appleurl = appleurl ? decodeURIComponent(appleurl) : "https://apps.apple.com/us/app/adobe-photoshop/id1457771281";
+
+
+      document.getElementById('link').href = `${appid ||esdk}://esdk` + window.location.search;
       let store = document.getElementById('store');
+      store.href = appleurl;
       let check = document.getElementById('checkbox');
       let storeHandler = (e) => {
               if (check.checked) {
-                      Clipboard.copy(window.location.href + "&app=com.adobe.ccsdk.ESDK.RefApp&timestamp=" + new Date().toISOString().replace(/\.[0-9]{3}/, ''));
+                      Clipboard.copy(window.location.href + `&app=${appid || "com.adobe.ccsdk.ESDK.RefApp"}&timestamp=` + new Date().toISOString().replace(/\.[0-9]{3}/, ''));
                     }
             };
       store.addEventListener('click', storeHandler);
       if (!window.location.href.includes("norefresh")) {
-              window.location = "esdk://esdk" + window.location.search;
+              window.location = `${appid ||esdk}://esdk` + window.location.search;
               setTimeout(function() {
                       window.location = window.location.href + "&norefresh=true";
                     }, 1000);

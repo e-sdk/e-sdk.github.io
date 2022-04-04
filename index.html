@@ -3,10 +3,11 @@
   <head>
     <link rel="stylesheet" href="./mvp.css" />
     <script src="./qrcode.min.js"></script>
+    <script src="../mobile-detect.min.js"></script>
   </head>
   <body>
     <main>
-      <h1>Handling Deep URLs</h1>
+      <h1>Handling Deep URLs</h1>z
       <b>Select the action</b>
       <select id="select">
         <option value="externalBrowser" selected>
@@ -55,8 +56,16 @@
     const setup = (type, provider) => {
       let svg;
       const element = document.getElementById(type);
+      const appid = new URL(window.location).searchParams.get('appid');
+      let params = ["appid", "appleurl", "playurl", "samsungurl"]
       actions.push(() => {
-        const url = provider(select.value, data.value) + add.value;
+        let url = provider(select.value, data.value) + add.value;
+        params.map(x=> {
+          let k = new URL(window.location).searchParams.get(x);
+          if (k) {
+            url = url + "&" + x + "=" + k;
+          }
+        })
         element.href = url;
         if (svg) {
           svg.parentNode.removeChild(svg);
@@ -65,11 +74,16 @@
         element.parentNode.appendChild(svg);
       });
     };
+    var md = new MobileDetect(window.navigator.userAgent);
     setup("universal", (actionName, actionData) => {
       return `./esdk/index.html?action_name=${actionName}&action_data=${actionData}&esdk=true`;
     });
     setup("external", (actionName, actionData) => {
-      return `esdk://com.adobe.creativesdk.engagement.AndroidTestApp/esdk?action_name=${actionName}&action_data=${actionData}&esdk=true`;
+      if (md.os() === 'iOS' || md.os() === 'iPadOS') {
+        return `${appid || "esdk"}://esdk?action_name=${actionName}&action_data=${actionData}&esdk=true`;
+      } else {
+        return `esdk://${appid || "com.adobe.creativesdk.engagement.AndroidTestApp"}/esdk?action_name=${actionName}&action_data=${actionData}&esdk=true`;
+      }
     });
     setup("fallback", (actionName, actionData) => {
       return `./uri/index.html?action_name=${actionName}&action_data=${actionData}&esdk=true`;
