@@ -53,10 +53,10 @@
     const select = document.getElementById("select");
     const add = document.getElementById("add");
     const data = document.getElementById("data");
+    const appid = new URL(window.location).searchParams.get('appid');
     const setup = (type, provider) => {
       let svg;
       const element = document.getElementById(type);
-      const appid = new URL(window.location).searchParams.get('appid');
       let params = ["appid", "appleurl", "playurl", "samsungurl"]
       actions.push(() => {
         let url = provider(select.value, data.value) + add.value;
