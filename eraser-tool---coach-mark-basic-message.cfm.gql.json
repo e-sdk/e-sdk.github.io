@@ -1,1 +1,264 @@
-{"data":{"experienceInappmessageByPath":{"item":{"_path":"/content/dam/esdk/in-app-messages/en_US/esdk-hackathon-2022/eraser-tool---coach-mark-basic-message/eraser-tool---coach-mark-basic-message","_variation":"master","id":"esdk-hackathon-2022-eraser-tool-coach-mark-basic-message","message":{"_path":"/content/dam/esdk/in-app-messages/en_US/esdk-hackathon-2022/eraser-tool---coach-mark-basic-message/eraser-tool---coach-mark-basic-message-1","_variation":"master","banner":{"type":"image","_path":"/content/dam/esdk/in-app-messages/en_US/esdk-hackathon-2022/eraser-tool---coach-mark-basic-message/assets/eraser-tool.gif","_authorUrl":"https://author-p22655-e59433.adobeaemcloud.com/content/dam/esdk/in-app-messages/en_US/esdk-hackathon-2022/eraser-tool---coach-mark-basic-message/assets/eraser-tool.gif","_publishUrl":"https://odin.adobe.com/content/dam/esdk/in-app-messages/en_US/esdk-hackathon-2022/eraser-tool---coach-mark-basic-message/assets/eraser-tool.gif","width":512,"height":288,"mimeType":"image/gif"},"content":{"html":"<h3>Eraser tool</h3>\n<p>Changes pixels to the background color or makes them transparent</p>\n","markdown":"\n### Eraser tool\n Changes pixels to the background color or makes them transparent\n\n ","plaintext":"Eraser tool\n\nChanges pixels to the background color or makes them transparent","json":[{"nodeType":"header","style":"h3","content":[{"nodeType":"text","value":"Eraser tool"}]},{"nodeType":"paragraph","content":[{"nodeType":"text","value":"Changes pixels to the background color or makes them transparent"}]}]},"buttons":[{"_path":"/content/dam/esdk/in-app-messages/en_US/esdk-hackathon-2022/eraser-tool---coach-mark-basic-message/buttons/not-now","_variation":"master","label":"Not now","variant":"primary","action":{"_path":"/content/dam/esdk/in-app-messages/en_US/esdk-hackathon-2022/eraser-tool---coach-mark-basic-message/actions/dismiss","_variation":"master","analyticsId":null,"dismiss":"dismiss","_metadata":{"stringMetadata":[{"name":"title","value":"Dismiss"},{"name":"description","value":""}],"stringArrayMetadata":[],"intMetadata":[],"intArrayMetadata":[],"floatMetadata":[],"floatArrayMetadata":[],"booleanMetadata":[],"booleanArrayMetadata":[],"calendarMetadata":[],"calendarArrayMetadata":[]},"_variations":[],"_model":{"_path":"/conf/esdk/settings/dam/cfm/models/action--dismiss","title":"Action: Dismiss"}},"quiet":false,"locReady":false,"_metadata":{"stringMetadata":[{"name":"title","value":"Not now"},{"name":"description","value":""}],"stringArrayMetadata":[],"intMetadata":[],"intArrayMetadata":[],"floatMetadata":[],"floatArrayMetadata":[],"booleanMetadata":[],"booleanArrayMetadata":[],"calendarMetadata":[],"calendarArrayMetadata":[]},"_variations":[],"_model":{"_path":"/conf/esdk/settings/dam/cfm/models/component--button","title":"Component: Button"}},{"_path":"/content/dam/esdk/in-app-messages/en_US/esdk-hackathon-2022/eraser-tool---coach-mark-basic-message/buttons/eraser-tool---learn-more","_variation":"master","label":"Learn more","variant":"primary","action":{"_path":"/content/dam/esdk/in-app-messages/en_US/esdk-hackathon-2022/eraser-tool---coach-mark-basic-message/actions/how-to-use-erasers-in-adobe-fresco","_variation":"master","analyticsId":null,"url":"https://helpx.adobe.com/fresco/using/erasers.html","dismissMessage":false,"sso":false,"target":"adobedotcom2","scope":"creative_cloud,AdobeID,openid,gnav,read_organizations,additional_info.projectedProductContext,sao.ACOM_CLOUD_STORAGE,sao.stock,sao.cce_private,additional_info.roles","locReady":false,"_metadata":{"stringMetadata":[{"name":"title","value":"How to use erasers in Adobe Fresco"},{"name":"description","value":""}],"stringArrayMetadata":[],"intMetadata":[],"intArrayMetadata":[],"floatMetadata":[],"floatArrayMetadata":[],"booleanMetadata":[],"booleanArrayMetadata":[],"calendarMetadata":[],"calendarArrayMetadata":[]},"_variations":[],"_model":{"_path":"/conf/esdk/settings/dam/cfm/models/action--inappbrowser","title":"Action: InAppBrowser"}},"quiet":false,"locReady":false,"_metadata":{"stringMetadata":[{"name":"title","value":"Eraser tool - Learn more"},{"name":"description","value":""}],"stringArrayMetadata":[],"intMetadata":[],"intArrayMetadata":[],"floatMetadata":[],"floatArrayMetadata":[],"booleanMetadata":[],"booleanArrayMetadata":[],"calendarMetadata":[],"calendarArrayMetadata":[]},"_variations":[],"_model":{"_path":"/conf/esdk/settings/dam/cfm/models/component--button","title":"Component: Button"}}],"locReady":false,"_metadata":{"stringMetadata":[{"name":"title","value":"Eraser tool - Coach Mark Basic Message"},{"name":"description","value":""}],"stringArrayMetadata":[],"intMetadata":[],"intArrayMetadata":[],"floatMetadata":[],"floatArrayMetadata":[],"booleanMetadata":[],"booleanArrayMetadata":[],"calendarMetadata":[],"calendarArrayMetadata":[]},"_variations":[],"_model":{"_path":"/conf/esdk/settings/dam/cfm/models/message--basic","title":"Message: Basic"}},"dialogMode":"alert","trigger":{"_path":"/content/dam/esdk/in-app-messages/en_US/esdk-hackathon-2022/eraser-tool---coach-mark-basic-message/trigger/stroke-sketch","_variation":"master","rule":{"html":"<p>(end@Value@event.subtype=&#34;stroke&#34;) &amp; (end@Value@event.category=&#34;Sketching&#34;)</p>","markdown":"(end@Value@event.subtype=\"stroke\") & (end@Value@event.category=\"Sketching\")\n\n","plaintext":"(end@Value@event.subtype=\"stroke\") & (end@Value@event.category=\"Sketching\")","json":[{"nodeType":"paragraph","content":[{"nodeType":"text","value":"(end@Value@event.subtype=\"stroke\") & (end@Value@event.category=\"Sketching\")"}]}]},"removalRule":{"html":null,"markdown":null,"plaintext":null,"json":null},"_metadata":{"stringMetadata":[{"name":"title","value":"Stroke Sketch"},{"name":"description","value":""}],"stringArrayMetadata":[],"intMetadata":[],"intArrayMetadata":[],"floatMetadata":[],"floatArrayMetadata":[],"booleanMetadata":[],"booleanArrayMetadata":[],"calendarMetadata":[],"calendarArrayMetadata":[]},"_variations":[],"_model":{"_path":"/conf/esdk/settings/dam/cfm/models/trigger--rule","title":"Trigger: Rule"}},"type":null,"hideCrossButton":true,"dismissWhen":null,"phoneOrientation":null,"tabletOrientation":null,"dynamicContext":null,"_metadata":{"stringMetadata":[{"name":"title","value":"Eraser tool - Coach Mark Basic Message"},{"name":"description","value":""}],"stringArrayMetadata":[],"intMetadata":[],"intArrayMetadata":[],"floatMetadata":[],"floatArrayMetadata":[],"booleanMetadata":[],"booleanArrayMetadata":[],"calendarMetadata":[],"calendarArrayMetadata":[]},"_variations":[],"_model":{"_path":"/conf/esdk/settings/dam/cfm/models/experience--inappmessage","title":"Experience: InAppMessage"}},"_references":[{"type":"image","_path":"/content/dam/esdk/in-app-messages/en_US/esdk-hackathon-2022/eraser-tool---coach-mark-basic-message/assets/eraser-tool.gif","_authorUrl":"https://author-p22655-e59433.adobeaemcloud.com/content/dam/esdk/in-app-messages/en_US/esdk-hackathon-2022/eraser-tool---coach-mark-basic-message/assets/eraser-tool.gif","_publishUrl":"https://odin.adobe.com/content/dam/esdk/in-app-messages/en_US/esdk-hackathon-2022/eraser-tool---coach-mark-basic-message/assets/eraser-tool.gif","width":512,"height":288,"mimeType":"image/gif"}]}}}
+{
+    "data": {
+        "experienceInappmessageByPath": {
+            "item": {
+                "_path": "/content/dam/esdk/in-app-messages/en_US/esdk-hackathon-2022/eraser-tool---coach-mark-basic-message/eraser-tool---coach-mark-basic-message",
+                "_variation": "master",
+                "id": "esdk-hackathon-2022-eraser-tool-coach-mark-basic-message",
+                "message": {
+                    "_path": "/content/dam/esdk/in-app-messages/en_US/esdk-hackathon-2022/eraser-tool---coach-mark-basic-message/eraser-tool---coach-mark-basic-message-1",
+                    "_variation": "master",
+                    "banner": {
+                        "type": "image",
+                        "_path": "/content/dam/esdk/in-app-messages/en_US/esdk-hackathon-2022/eraser-tool---coach-mark-basic-message/assets/eraser-tool.gif",
+                        "_authorUrl": "https://author-p22655-e59433.adobeaemcloud.com/content/dam/esdk/in-app-messages/en_US/esdk-hackathon-2022/eraser-tool---coach-mark-basic-message/assets/eraser-tool.gif",
+                        "_publishUrl": "https://odin.adobe.com/content/dam/esdk/in-app-messages/en_US/esdk-hackathon-2022/eraser-tool---coach-mark-basic-message/assets/eraser-tool.gif",
+                        "width": 512,
+                        "height": 288,
+                        "mimeType": "image/gif"
+                    },
+                    "content": {
+                        "html": "<h3>Eraser tool</h3>\n<p>Changes pixels to the background color or makes them transparent</p>\n",
+                        "markdown": "\n### Eraser tool\n Changes pixels to the background color or makes them transparent\n\n ",
+                        "plaintext": "Eraser tool\n\nChanges pixels to the background color or makes them transparent",
+                        "json": [
+                            {
+                                "nodeType": "header",
+                                "style": "h3",
+                                "content": [
+                                    {
+                                        "nodeType": "text",
+                                        "value": "Eraser tool"
+                                    }
+                                ]
+                            },
+                            {
+                                "nodeType": "paragraph",
+                                "content": [
+                                    {
+                                        "nodeType": "text",
+                                        "value": "Changes pixels to the background color or makes them transparent"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "buttons": [
+                        {
+                            "_path": "/content/dam/esdk/in-app-messages/en_US/esdk-hackathon-2022/eraser-tool---coach-mark-basic-message/buttons/not-now",
+                            "_variation": "master",
+                            "label": "Not now",
+                            "variant": "primary",
+                            "action": {
+                                "_path": "/content/dam/esdk/in-app-messages/en_US/esdk-hackathon-2022/eraser-tool---coach-mark-basic-message/actions/dismiss",
+                                "_variation": "master",
+                                "analyticsId": null,
+                                "dismiss": "dismiss",
+                                "_metadata": {
+                                    "stringMetadata": [
+                                        {
+                                            "name": "title",
+                                            "value": "Dismiss"
+                                        },
+                                        {
+                                            "name": "description",
+                                            "value": ""
+                                        }
+                                    ],
+                                    "stringArrayMetadata": [],
+                                    "intMetadata": [],
+                                    "intArrayMetadata": [],
+                                    "floatMetadata": [],
+                                    "floatArrayMetadata": [],
+                                    "booleanMetadata": [],
+                                    "booleanArrayMetadata": [],
+                                    "calendarMetadata": [],
+                                    "calendarArrayMetadata": []
+                                },
+                                "_variations": [],
+                                "_model": {
+                                    "_path": "/conf/esdk/settings/dam/cfm/models/action--dismiss",
+                                    "title": "Action: Dismiss"
+                                }
+                            },
+                            "quiet": false,
+                            "locReady": false,
+                            "_metadata": {
+                                "stringMetadata": [
+                                    {
+                                        "name": "title",
+                                        "value": "Not now"
+                                    },
+                                    {
+                                        "name": "description",
+                                        "value": ""
+                                    }
+                                ],
+                                "stringArrayMetadata": [],
+                                "intMetadata": [],
+                                "intArrayMetadata": [],
+                                "floatMetadata": [],
+                                "floatArrayMetadata": [],
+                                "booleanMetadata": [],
+                                "booleanArrayMetadata": [],
+                                "calendarMetadata": [],
+                                "calendarArrayMetadata": []
+                            },
+                            "_variations": [],
+                            "_model": {
+                                "_path": "/conf/esdk/settings/dam/cfm/models/component--button",
+                                "title": "Component: Button"
+                            }
+                        },
+                        {
+                            "_path": "/content/dam/esdk/in-app-messages/en_US/esdk-hackathon-2022/eraser-tool---coach-mark-basic-message/buttons/eraser-tool---learn-more",
+                            "_variation": "master",
+                            "label": "Learn more",
+                            "variant": "primary",
+                            "action": {
+                                "_path": "/content/dam/esdk/in-app-messages/en_US/esdk-hackathon-2022/eraser-tool---coach-mark-basic-message/actions/how-to-use-erasers-in-adobe-fresco",
+                                "_variation": "master",
+                                "analyticsId": null,
+                                "url": "https://helpx.adobe.com/fresco/using/erasers.html",
+                                "dismissMessage": false,
+                                "sso": false,
+                                "target": "adobedotcom2",
+                                "scope": "creative_cloud,AdobeID,openid,gnav,read_organizations,additional_info.projectedProductContext,sao.ACOM_CLOUD_STORAGE,sao.stock,sao.cce_private,additional_info.roles",
+                                "locReady": false,
+                                "_metadata": {
+                                    "stringMetadata": [
+                                        {
+                                            "name": "title",
+                                            "value": "How to use erasers in Adobe Fresco"
+                                        },
+                                        {
+                                            "name": "description",
+                                            "value": ""
+                                        }
+                                    ],
+                                    "stringArrayMetadata": [],
+                                    "intMetadata": [],
+                                    "intArrayMetadata": [],
+                                    "floatMetadata": [],
+                                    "floatArrayMetadata": [],
+                                    "booleanMetadata": [],
+                                    "booleanArrayMetadata": [],
+                                    "calendarMetadata": [],
+                                    "calendarArrayMetadata": []
+                                },
+                                "_variations": [],
+                                "_model": {
+                                    "_path": "/conf/esdk/settings/dam/cfm/models/action--inappbrowser",
+                                    "title": "Action: InAppBrowser"
+                                }
+                            },
+                            "quiet": false,
+                            "locReady": false,
+                            "_metadata": {
+                                "stringMetadata": [
+                                    {
+                                        "name": "title",
+                                        "value": "Eraser tool - Learn more"
+                                    },
+                                    {
+                                        "name": "description",
+                                        "value": ""
+                                    }
+                                ],
+                                "stringArrayMetadata": [],
+                                "intMetadata": [],
+                                "intArrayMetadata": [],
+                                "floatMetadata": [],
+                                "floatArrayMetadata": [],
+                                "booleanMetadata": [],
+                                "booleanArrayMetadata": [],
+                                "calendarMetadata": [],
+                                "calendarArrayMetadata": []
+                            },
+                            "_variations": [],
+                            "_model": {
+                                "_path": "/conf/esdk/settings/dam/cfm/models/component--button",
+                                "title": "Component: Button"
+                            }
+                        }
+                    ],
+                    "locReady": false,
+                    "_metadata": {
+                        "stringMetadata": [
+                            {
+                                "name": "title",
+                                "value": "Eraser tool - Coach Mark Basic Message"
+                            },
+                            {
+                                "name": "description",
+                                "value": ""
+                            }
+                        ],
+                        "stringArrayMetadata": [],
+                        "intMetadata": [],
+                        "intArrayMetadata": [],
+                        "floatMetadata": [],
+                        "floatArrayMetadata": [],
+                        "booleanMetadata": [],
+                        "booleanArrayMetadata": [],
+                        "calendarMetadata": [],
+                        "calendarArrayMetadata": []
+                    },
+                    "_variations": [],
+                    "_model": {
+                        "_path": "/conf/esdk/settings/dam/cfm/models/message--basic",
+                        "title": "Message: Basic"
+                    }
+                },
+                "dialogMode": "alert",
+                "type": null,
+                "hideCrossButton": true,
+                "dismissWhen": null,
+                "phoneOrientation": null,
+                "tabletOrientation": null,
+                "dynamicContext": null,
+                "partialMessage": true,
+                "accessibilityId": "GEMToolbarEraser",
+                "width": 402,
+                "height": 170,
+                "_metadata": {
+                    "stringMetadata": [
+                        {
+                            "name": "title",
+                            "value": "Eraser tool - Coach Mark Basic Message"
+                        },
+                        {
+                            "name": "description",
+                            "value": ""
+                        }
+                    ],
+                    "stringArrayMetadata": [],
+                    "intMetadata": [],
+                    "intArrayMetadata": [],
+                    "floatMetadata": [],
+                    "floatArrayMetadata": [],
+                    "booleanMetadata": [],
+                    "booleanArrayMetadata": [],
+                    "calendarMetadata": [],
+                    "calendarArrayMetadata": []
+                },
+                "_variations": [],
+                "_model": {
+                    "_path": "/conf/esdk/settings/dam/cfm/models/experience--inappmessage",
+                    "title": "Experience: InAppMessage"
+                }
+            },
+            "_references": [
+                {
+                    "type": "image",
+                    "_path": "/content/dam/esdk/in-app-messages/en_US/esdk-hackathon-2022/eraser-tool---coach-mark-basic-message/assets/eraser-tool.gif",
+                    "_authorUrl": "https://author-p22655-e59433.adobeaemcloud.com/content/dam/esdk/in-app-messages/en_US/esdk-hackathon-2022/eraser-tool---coach-mark-basic-message/assets/eraser-tool.gif",
+                    "_publishUrl": "https://odin.adobe.com/content/dam/esdk/in-app-messages/en_US/esdk-hackathon-2022/eraser-tool---coach-mark-basic-message/assets/eraser-tool.gif",
+                    "width": 512,
+                    "height": 288,
+                    "mimeType": "image/gif"
+                }
+            ]
+        }
+    }
+}
