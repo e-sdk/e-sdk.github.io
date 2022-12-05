@@ -210,6 +210,58 @@
                         "title": "Message: Basic"
                     }
                 },
+                "trigger": {
+                    "_path": "/content/dam/esdk/in-app-messages/en_US/esdk-hackathon-2022/eraser-tool---coach-mark-basic-message/trigger/stroke-sketch",
+                    "_variation": "master",
+                    "rule": {
+                        "html": "<p>(end@Value@event.subtype=&#34;stroke&#34;) &amp; (end@Value@event.category=&#34;Sketching&#34;)</p>",
+                        "markdown": "(end@Value@event.subtype=\"stroke\") & (end@Value@event.category=\"Sketching\")\n\n",
+                        "plaintext": "(end@Value@event.subtype=\"stroke\") & (end@Value@event.category=\"Sketching\")",
+                        "json": [
+                            {
+                                "nodeType": "paragraph",
+                                "content": [
+                                    {
+                                        "nodeType": "text",
+                                        "value": "(end@Value@event.subtype=\"stroke\") & (end@Value@event.category=\"Sketching\")"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "removalRule": {
+                        "html": null,
+                        "markdown": null,
+                        "plaintext": null,
+                        "json": null
+                    },
+                    "_metadata": {
+                        "stringMetadata": [
+                            {
+                                "name": "title",
+                                "value": "Stroke Sketch"
+                            },
+                            {
+                                "name": "description",
+                                "value": ""
+                            }
+                        ],
+                        "stringArrayMetadata": [],
+                        "intMetadata": [],
+                        "intArrayMetadata": [],
+                        "floatMetadata": [],
+                        "floatArrayMetadata": [],
+                        "booleanMetadata": [],
+                        "booleanArrayMetadata": [],
+                        "calendarMetadata": [],
+                        "calendarArrayMetadata": []
+                    },
+                    "_variations": [],
+                    "_model": {
+                        "_path": "/conf/esdk/settings/dam/cfm/models/trigger--rule",
+                        "title": "Trigger: Rule"
+                    }
+                },
                 "dialogMode": "alert",
                 "type": null,
                 "hideCrossButton": true,
@@ -220,7 +272,7 @@
                 "partialMessage": true,
                 "accessibilityId": "GEMToolbarEraser",
                 "width": 402,
-                "height": 170,
+                "height": 588,
                 "_metadata": {
                     "stringMetadata": [
                         {
