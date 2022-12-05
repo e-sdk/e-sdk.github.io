@@ -214,16 +214,16 @@
                     "_path": "/content/dam/esdk/in-app-messages/en_US/esdk-hackathon-2022/eraser-tool---coach-mark-basic-message/trigger/stroke-sketch",
                     "_variation": "master",
                     "rule": {
-                        "html": "<p>(end@Value@event.subtype=&#34;stroke&#34;) &amp; (end@Value@event.category=&#34;Sketching&#34;)</p>",
-                        "markdown": "(end@Value@event.subtype=\"stroke\") & (end@Value@event.category=\"Sketching\")\n\n",
-                        "plaintext": "(end@Value@event.subtype=\"stroke\") & (end@Value@event.category=\"Sketching\")",
+                        "html": "<p>(end@Value@event.subtype=&#34;stroke&#34;) &amp; (end@Value@event.category=&#34;MOBILE&#34;)</p>",
+                        "markdown": "(end@Value@event.subtype=\"stroke\") & (end@Value@event.category=\"MOBILE\")\n\n",
+                        "plaintext": "(end@Value@event.subtype=\"stroke\") & (end@Value@event.category=\"MOBILE\")",
                         "json": [
                             {
                                 "nodeType": "paragraph",
                                 "content": [
                                     {
                                         "nodeType": "text",
-                                        "value": "(end@Value@event.subtype=\"stroke\") & (end@Value@event.category=\"Sketching\")"
+                                        "value": "(end@Value@event.subtype=\"stroke\") & (end@Value@event.category=\"MOBILE\")"
                                     }
                                 ]
                             }
