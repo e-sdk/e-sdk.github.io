@@ -270,6 +270,7 @@
                 "tabletOrientation": null,
                 "dynamicContext": null,
                 "partialMessage": true,
+                "partialMessageAnimation": "fadeIn",
                 "accessibilityId": "GEMToolbarEraser",
                 "width": 402,
                 "height": 588,
