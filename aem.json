@@ -1,5 +1,54 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
+  "definitions": {
+    "reference": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "_path": {
+          "type": "string"
+        },
+        "_authorUrl": {
+          "type": "string"
+        },
+        "_publishUrl": {
+          "type": "string"
+        },
+        "title": {
+          "type": ["string", "null"]
+        },
+        "description": {
+          "type": ["string", "null"]
+        },
+        "width": {
+          "type": "integer"
+        },
+        "height": {
+          "type": "integer"
+        },
+        "mimeType": {
+          "type": "string"
+        },
+        "_dynamicUrl": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "type",
+        "_path",
+        "_authorUrl",
+        "_publishUrl",
+        "title",
+        "description",
+        "width",
+        "height",
+        "mimeType",
+        "_dynamicUrl"
+      ]
+    }
+  },
   "properties": {
     "data": {
       "type": "object",
@@ -12,55 +61,9 @@
             },
             "_references": {
               "type": "array",
-              "items": [
-                {
-                  "type": "object",
-                  "properties": {
-                    "type": {
-                      "type": "string"
-                    },
-                    "_path": {
-                      "type": "string"
-                    },
-                    "_authorUrl": {
-                      "type": "string"
-                    },
-                    "_publishUrl": {
-                      "type": "string"
-                    },
-                    "title": {
-                      "type": ["string", "null"]
-                    },
-                    "description": {
-                      "type": ["string", "null"]
-                    },
-                    "width": {
-                      "type": "integer"
-                    },
-                    "height": {
-                      "type": "integer"
-                    },
-                    "mimeType": {
-                      "type": "string"
-                    },
-                    "_dynamicUrl": {
-                      "type": "string"
-                    }
-                  },
-                  "required": [
-                    "type",
-                    "_path",
-                    "_authorUrl",
-                    "_publishUrl",
-                    "title",
-                    "description",
-                    "width",
-                    "height",
-                    "mimeType",
-                    "_dynamicUrl"
-                  ]
-                }
-              ]
+              "items": {
+                "$ref": "#/definitions/reference"
+              }
             }
           },
           "required": ["item", "_references"]
