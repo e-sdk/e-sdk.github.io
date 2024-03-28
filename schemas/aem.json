@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "properties": {
+    "data": {
+      "type": "object",
+      "patternProperties": {
+        "^.*$": {
+          "type": "object",
+          "properties": {
+            "item": {
+              "type": "object"
+            },
+            "_references": {
+              "type": "array",
+              "items": {
+                "$ref": "/schemas/reference"
+              }
+            }
+          },
+          "required": ["item"]
+        }
+      }
+    }
+  },
+  "required": ["data"]
+}

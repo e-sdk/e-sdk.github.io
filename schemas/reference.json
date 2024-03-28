@@ -1,0 +1,47 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "properties": {
+    "type": {
+      "type": "string"
+    },
+    "_path": {
+      "type": "string"
+    },
+    "_authorUrl": {
+      "type": "string"
+    },
+    "_publishUrl": {
+      "type": "string"
+    },
+    "title": {
+      "type": ["string", "null"]
+    },
+    "description": {
+      "type": ["string", "null"]
+    },
+    "width": {
+      "type": "integer"
+    },
+    "height": {
+      "type": "integer"
+    },
+    "mimeType": {
+      "type": "string"
+    },
+    "_dynamicUrl": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "type",
+    "_path",
+    "_authorUrl",
+    "_publishUrl",
+    "title",
+    "description",
+    "width",
+    "height",
+    "mimeType",
+    "_dynamicUrl"
+  ]
+}
