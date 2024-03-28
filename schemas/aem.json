@@ -13,7 +13,7 @@
             "_references": {
               "type": "array",
               "items": {
-                "$ref": "/schemas/reference"
+                "$ref": "/schemas/reference.json"
               }
             }
           },
